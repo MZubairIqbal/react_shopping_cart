@@ -1,0 +1,113 @@
+/* CSS RESET *********** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --txt-primary: #000;
+  --txt-secondary: #fff;
+  --txt-light: #414140e0;
+  --bg-primary: #fff;
+  --bg-secondary: #918e8ee6;
+  --bg-special: #3333ee;
+  --bg-2-special: #5555ec73;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* Custom CSS of the Components ************ */
+.s-header {
+  /* border: 2px solid blue; */
+  padding: 2rem 1rem 0 0;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--txt-primary);
+}
+.header-start {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.header-arrow {
+  /* border: 2px solid green; */
+  width: 20px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  user-select: none;
+}
+.header-logo {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--txt-light);
+  cursor: pointer;
+  user-select: none;
+}
+.header-end {
+  /* border: 2px solid red; */
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+.header-end img {
+  /* border: 2px solid greenyellow; */
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.header-end .cart-counter {
+  background: var(--bg-special);
+  text-align: center;
+  color: var(--txt-secondary);
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding: 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+}
+/* Section's CSS Starts Here ******** */
+.items-box {
+  border: 2px solid blue;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0 1rem 0;
+}
+.box-head {
+  border: 2px solid yellowgreen;
+}
+.box-head :first-child {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.box-head :nth-child(2) {
+  border: 2px solid red;
+  font-size: 1.6rem;
+}
+
+/* Item Components CSS *********88 */
+.items-box .items-container {
+  border: 2px solid purple;
+  background-color: var(--bg-2-special);
+  padding: 2rem 1rem;
+}
