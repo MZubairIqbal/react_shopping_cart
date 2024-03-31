@@ -1,24 +1,10 @@
-import React, { createContext, useEffect, useState } from 'react'
-import Items from './Items'
-import './ShoppingCart.css'
-import { Products } from './Products';
-export const ShoppingCartContext = createContext();
-function ShoppingCart() {
-    const [totalPrice, setTotalPrice] = useState(0);
-    useEffect(() => {
-        calculatePrice();
-    }, [])
-    const calculatePrice = () => {
+import React, { useState } from 'react'
+import { Products } from './Products'
 
-        const tPrice = Products.reduce((accumulator, currentprice) => {
-            let integerValue = parseInt(currentprice.price);
-            return accumulator + integerValue;
-        }, 0);
-        setTotalPrice(tPrice);
-    }
+function ContextCart() {
+    const [items, setItems] = useState(Products);
     return (
         <>
-            {/* <div>This is the ShoppingCart Component...</div> */}
             <header className="s-header">
                 <div className="header-start">
                     <img src="./images/arrow.png" alt="Arrow Loading..." className='header-arrow' />
@@ -26,14 +12,14 @@ function ShoppingCart() {
                 </div>
                 <div className="header-end">
                     <img src="./images/cart.png" alt="Cart Loading..." />
-                    <div className="cart-counter">{Products.length}</div>
+                    <div className="cart-counter">{items.length}</div>
                 </div>
             </header>
             {/* Header's MarkUp End  */}
             <section className="items-box">
                 <div className="box-head">
                     <h3 className="box-heading">Shopping Cart</h3>
-                    <p className="box-para">you have <span>{Products.length}</span> items in the Cart.</p>
+                    <p className="box-para">you have <span>{items.length}</span> items in the Cart.</p>
                 </div>
                 {/* <Items products={Products} /> */}
                 <Items />
@@ -43,4 +29,4 @@ function ShoppingCart() {
     )
 }
 
-export default ShoppingCart
+export default ContextCart

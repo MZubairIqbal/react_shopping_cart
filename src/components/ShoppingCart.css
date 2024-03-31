@@ -11,10 +11,11 @@
   --bg-primary: #fff;
   --bg-secondary: #918e8ee6;
   --bg-special: #3333ee;
-  --bg-2-special: #5555ec73;
+  --bg-2-special: #f3f6fb;
 }
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   font-size: 1.6rem;
@@ -39,13 +40,15 @@ a {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid var(--txt-primary);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 .header-start {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 .header-arrow {
   /* border: 2px solid green; */
@@ -75,9 +78,10 @@ a {
   aspect-ratio: 1/1;
 }
 .header-end .cart-counter {
-  background: var(--bg-special);
+  background: var(--bg-2-special);
   text-align: center;
-  color: var(--txt-secondary);
+  color: var(--txt-primary);
+  border: 1px solid rgba(128, 128, 128, 0.604);
   font-size: 1.8rem;
   font-weight: 800;
   padding: 0.5rem;
@@ -88,26 +92,139 @@ a {
 }
 /* Section's CSS Starts Here ******** */
 .items-box {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   max-width: 1200px;
   margin: auto;
   padding: 2rem 0 1rem 0;
+  display: grid;
 }
 .box-head {
-  border: 2px solid yellowgreen;
+  /* border: 2px solid yellowgreen; */
+  padding-left: 0.5rem;
 }
 .box-head :first-child {
   font-size: 2.5rem;
   font-weight: 500;
 }
-.box-head :nth-child(2) {
-  border: 2px solid red;
-  font-size: 1.6rem;
+.box-head :nth-child(2),
+.box-head :nth-child(2) span {
+  /* border: 2px solid red; */
+  font-size: 1.8rem;
 }
 
 /* Item Components CSS *********88 */
-.items-box .items-container {
-  border: 2px solid purple;
+.items-container {
+  /* border: 2px solid rgb(6, 128, 0); */
+  height: 50dvh;
   background-color: var(--bg-2-special);
   padding: 2rem 1rem;
+  width: 90%;
+  margin: 4rem auto;
+  /* margin: auto; */
+  border-radius: 0.5rem;
+  border: 1px solid #80808085;
+  /* overflow-y: scroll; */
+  display: flex;
+  flex-direction: column;
+}
+.item-wraper {
+  /* border: 2px solid red; */
+  border-bottom: 2px solid #8080809c;
+  display: grid;
+  grid-template-columns: 170px repeat(3, 1fr) 100px;
+  gap: 1rem;
+  align-items: center;
+  padding: 0 0.5rem 1rem 0;
+  margin-bottom: 4rem;
+}
+.item-wraper .img-box {
+  /* border: 2px solid orange; */
+  width: 150px;
+}
+.img-box img {
+  border-radius: 0.5rem;
+  /* very important point  */
+  /* width: 100%; comming from the above global property for img tags  */
+  aspect-ratio: 16/9;
+}
+/* .item-wraper .detail-box {
+  border: 2px solid red;
+} */
+.item-wraper .quantity-box {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.quantity-box #product-num {
+  background: transparent;
+  border: 1px solid #8080809c;
+  padding: 1rem;
+  width: 80px;
+}
+.quantity-box #product-num:focus {
+  border: 2px solid #8080809c;
+  outline: none;
+  background-color: var(--bg-primary);
+}
+.quantity-box .minus,
+.quantity-box .plus {
+  width: 15px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  user-select: none;
+}
+.item-wraper .product-price-box {
+  /* border: 2px solid green; */
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.item-wraper > :last-child {
+  /* border: 2px solid #d400ff; */
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+.item-wraper > :last-child img {
+  width: 20px;
+  aspect-ratio: 1/1;
+  transition: all ease-in-out 0.25s;
+}
+.item-wraper > :last-child:hover img {
+  width: 24px;
+  aspect-ratio: 1/1;
+}
+.items-box .box-price {
+  /* border: 2px solid crimson; */
+  justify-self: end;
+  display: inline-block;
+  width: max-content;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  color: var(--txt-light);
+  /* background-color: var(--bg-secondary); */
+  border-radius: 0.25rem;
+}
+.box-price span {
+  color: var(--txt-primary);
+}
+
+/* Break Points ************ */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .item-wraper {
+    grid-template-columns: 1fr;
+    padding-bottom: 2rem;
+  }
+  .item-wraper .img-box {
+    margin: auto;
+  }
+  .item-wraper .detail-box {
+    /* border: 2px solid red; */
+    font-size: 2rem;
+  }
 }
