@@ -157,16 +157,26 @@ a {
   align-items: center;
   gap: 1rem;
 }
-.quantity-box #product-num {
+.quantity-box input[type='number'] {
   background: transparent;
   border: 1px solid #8080809c;
+  text-align: center;
   padding: 1rem;
   width: 80px;
 }
-.quantity-box #product-num:focus {
-  border: 2px solid #8080809c;
+/* To Remove Arrows from the input[type="number"] fields ************* */
+.quantity-box input[type='number']::-webkit-inner-spin-button,
+.quantity-box input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quantity-box input[type='number']:focus {
+  border: 2px solid #808080c9;
   outline: none;
   background-color: var(--bg-primary);
+}
+.quantity-box input[type='number']:focus-within {
+  outline: none;
 }
 .quantity-box .minus,
 .quantity-box .plus {
@@ -192,7 +202,7 @@ a {
   aspect-ratio: 1/1;
   transition: all ease-in-out 0.25s;
 }
-.item-wraper > :last-child:hover img {
+.item-wraper > :last-child img:hover {
   width: 24px;
   aspect-ratio: 1/1;
 }

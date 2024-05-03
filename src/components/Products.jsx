@@ -45,7 +45,7 @@ export const Products = [
         description: "White in Color",
         price: "790",
         img: "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        quantity: "",
+        quantity: 1,
     },
     {
         id: 7,
